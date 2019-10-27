@@ -1,4 +1,4 @@
-const formatDate = timeInSeconds => {
+const formatDate = (timeInSeconds = 0) => {
   let hours = parseInt(timeInSeconds / 3600);
   let minutes = parseInt(timeInSeconds / 60) - hours * 60;
   let seconds = timeInSeconds - hours * 3600 - minutes * 60;
@@ -7,7 +7,7 @@ const formatDate = timeInSeconds => {
     if (value > 0) {
       return `${value}${suffix} `;
     }
-    return suffix === 's' && (hours <= 0 && minutes <= 0) ? `${value}${suffix} ` : '';
+    return suffix === 's' && (hours, minutes <= 0) ? `${value}${suffix}` : '';
   };
 
   let formattedTime = `${addTimePosition(hours, 'h')}${addTimePosition(minutes, 'm')}${addTimePosition(seconds, 's')}`;
