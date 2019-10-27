@@ -3,15 +3,15 @@ const formatDate = timeInSeconds => {
   let minutes = parseInt(timeInSeconds / 60) - hours * 60;
   let seconds = timeInSeconds - hours * 3600 - minutes * 60;
 
-  let addTimePos = (value, suffix) => {
+  let addTimePosition = (value, suffix) => {
     if (value > 0) {
-      return value + suffix;
+      return `${value}${suffix} `;
     }
-    return '';
+    return suffix === 's' ? `${value}${suffix} ` : '';
   };
 
-  let formattedTime = `${addTimePos(hours, 'h')}${addTimePos(minutes, 'm')}${seconds}s`;
-  return `${formattedTime}`;
+  let formattedTime = `${addTimePosition(hours, 'h')}${addTimePosition(minutes, 'm')}${addTimePosition(seconds, 's')}`;
+  return `${formattedTime.trim()}`;
 };
 
 module.exports = formatDate;
