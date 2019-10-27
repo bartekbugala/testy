@@ -7,7 +7,7 @@ const formatDate = timeInSeconds => {
     if (value > 0) {
       return `${value}${suffix} `;
     }
-    return suffix === 's' ? `${value}${suffix} ` : '';
+    return suffix === 's' && (hours <= 0 && minutes <= 0) ? `${value}${suffix} ` : '';
   };
 
   let formattedTime = `${addTimePosition(hours, 'h')}${addTimePosition(minutes, 'm')}${addTimePosition(seconds, 's')}`;
