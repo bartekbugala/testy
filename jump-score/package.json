@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "mocha index.test.js",
+        "test": "mocha calculateDistancePoints.test.js && mocha calculateStylePoints.test.js && mocha calculateTotalPoints.test.js  ",
         "test:watch": "onchange \"./*.js\" -- npm test",
         "test:stoponfirst": "mocha index.test.js -w -b"
     },
